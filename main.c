@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 22:28:22 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/11 22:46:47 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:25:16 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int	main(int ac, char *av[])
 
 	if (ac != 2)
 		err_msg("Invalid param");
+	data.col_len = 0;
+	data.collec = 0;
+	data.row_len = 0;
 	main_checks(&data, av[1]);
 	launch_game(&data);
 }

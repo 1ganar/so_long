@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 22:42:18 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/14 01:32:06 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:11:09 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,17 @@ void	main_checks(t_map *data, char *parm)
 {
 	int		fd;
 	char	*str_map;
+	char	*buf;
 
 	str_map = NULL;
 	check_parm(parm, &fd);
-	str_map = try2read_map(str_map, fd);
+	buf = malloc(sizeof(char) * 11);
+	if (!buf)
+		err_msg("malloc fail !");
+	str_map = try2read_map(str_map, buf, fd);
 	if (!str_map)
 		err_msg("Map problem\n");
 	close(fd);
-	data->col_len = 0;
-	data->collec = 0;
-	data->row_len = 0;
 	first_check(str_map, data);
 	data->map = ft_split(str_map, data);
 	if (!data->map)

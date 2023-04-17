@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 23:38:58 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/12 09:50:11 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/16 23:58:14 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,9 @@ void	last_check(t_map data)
 
 void	check_a_solution(t_map *data, int x, int y)
 {
-	if (x >= data->col_len || x < 0 || y >= data->row_len || y < 0
+	if (x >= data->col_len || x < 0 || y >= data->row_len || y < 1
 		|| data->map[y][x] == 'F' || data->map[y][x] == '1'
-		|| data->map[y][x] == 'E' || data->map[y][x] == 'Y'
-		|| data->map[y][x] == 'O')
+		|| data->map[y][x] == 'E' || data->map[y][x] == 'Y')
 		return ;
 	if (data->map[y][x] == 'C')
 		data->map[y][x] = 'Y';

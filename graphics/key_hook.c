@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 00:19:27 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/12 06:42:25 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:22:03 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_step(int key, t_map *data)
 	c = 0;
 	r = 0;
 	if (key == 53)
-		exit (1);
+		ft_exit ();
 	else if (key == 0 || key == 123)
 		c = -1;
 	else if (key == 2 || key == 124)

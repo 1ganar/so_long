@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/04/16 23:51:05 by mberrouk          #+#    #+#              #
+#    Updated: 2023/04/16 23:55:41 by mberrouk         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS	= 	main.c analysis/map_checks.c analysis/process_error.c analysis/solution_checks.c \
 			graphics/initial.c graphics/key_hook.c graphics/process_img.c \
 			utils/2d_utils.c utils/str_utils.c \
@@ -11,22 +23,21 @@ CFLAGS	= 	-Wall -Wextra -Werror
 mlxFLG	=	-lmlx -framework OpenGL -framework AppKit
 NAME 	= 	so_long
 NAME_B	= 	so_long_bonus
-OBJ 	= 	${SRCS:.c=.o}
 
 all 	: $(NAME)
 
-$(NAME) : $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) $(mlxFLG) -o $(NAME)
+$(NAME) : $(SRCS)
+		$(CC) $(CFLAGS) $(SRCS) $(mlxFLG) -o $(NAME)
 
 clean 	: 
-		rm -f ${OBJ}
+		rm -f $(NAME)
 
 fclean 	: clean
 		rm -f $(NAME) $(NAME_B)
 
 bonus	: $(NAME_B)
 
-$(NAME_B) : 
+$(NAME_B) : $(SRCS_B)
 			$(CC) $(CFLAGS) $(SRCS_B) $(mlxFLG) -o $(NAME_B)
 
 re 		: fclean all

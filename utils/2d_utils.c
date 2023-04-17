@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 23:45:45 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/12 09:52:53 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:01:19 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ char	**ft_split(char *str, t_map *data)
 	i = 0;
 	resl = malloc(sizeof(char *) * (data->row_len + 1));
 	if (!resl)
-		err_msg("malloc failed !");
+		err_msg("malloc fail !");
 	resl[data->row_len] = NULL;
 	while (str[i])
 	{
 		resl[j] = malloc(sizeof(char) * (data->col_len + 1));
 		if (!resl[j])
-			err_msg("malloc failed !");
+			err_msg("malloc fail !");
 		i += _str_cpy(resl[j], &str[i]);
 		if (!str[i])
 			break ;

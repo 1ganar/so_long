@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 22:32:58 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/12 10:23:20 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:22:10 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	get_step(t_gpc *data, t_posi mov)
 	write(1, "\n", 1);
 	player_mov(data->map->p, data);
 	if (data->map->map[data->map->p.r][data->map->p.c] == 'E')
-		exit (0);
+		ft_exit ();
 	data->map->map[mov.r][mov.c] = '0';
 	data->map->map[data->map->p.r][data->map->p.c] = 'P';
 }

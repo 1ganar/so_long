@@ -6,7 +6,7 @@
 /*   By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 23:47:36 by mberrouk          #+#    #+#             */
-/*   Updated: 2023/04/14 01:30:36 by mberrouk         ###   ########.fr       */
+/*   Updated: 2023/04/17 00:04:08 by mberrouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,11 @@ int	_str_cpy(char *dest, char *src)
 	return (i);
 }
 
-char	*try2read_map(char *map, int fd)
+char	*try2read_map(char *map, char *buf, int fd)
 {
-	char	*buf;
 	int		readbit;
 	int		len;
 
-	buf = malloc(sizeof(char) * 11);
 	readbit = 1;
 	len = 0;
 	while (readbit)
