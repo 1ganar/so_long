@@ -6,7 +6,7 @@
 #    By: mberrouk <mberrouk@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/16 23:51:05 by mberrouk          #+#    #+#              #
-#    Updated: 2023/04/16 23:55:41 by mberrouk         ###   ########.fr        #
+#    Updated: 2023/04/17 02:45:30 by mberrouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,17 +27,17 @@ NAME_B	= 	so_long_bonus
 all 	: $(NAME)
 
 $(NAME) : $(SRCS)
-		$(CC) $(CFLAGS) $(SRCS) $(mlxFLG) -o $(NAME)
+		@$(CC) $(CFLAGS) $(SRCS) $(mlxFLG) -o $(NAME)
 
 clean 	: 
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 fclean 	: clean
-		rm -f $(NAME) $(NAME_B)
+		@rm -f $(NAME) $(NAME_B)
 
 bonus	: $(NAME_B)
 
 $(NAME_B) : $(SRCS_B)
-			$(CC) $(CFLAGS) $(SRCS_B) $(mlxFLG) -o $(NAME_B)
+			@$(CC) $(CFLAGS) $(SRCS_B) $(mlxFLG) -o $(NAME_B)
 
 re 		: fclean all
